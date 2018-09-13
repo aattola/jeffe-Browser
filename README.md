@@ -9,11 +9,11 @@ To build cargo you only need to have [nodejs](https://nodejs.org) and [yarn](htt
 
 Install all the dependencies
 ```
-yarn
+$ yarn
 ```
 Run browser
 ```
-yarn start
+$ yarn start
 ```
 
 ### Building installer
