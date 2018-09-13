@@ -1,17 +1,17 @@
-const electron = require('electron');
-const path = require('path');
-const platform = require('./utils/platform.js');
+const electron = require('electron')
+const path = require('path')
+const platform = require('./utils/platform.js')
 
 module.exports = (onClosed) => {
-  const display = electron.screen.getPrimaryDisplay();
+  const display = electron.screen.getPrimaryDisplay()
 
-  let width = Math.floor(display.workAreaSize.width * 0.7);
-  let height = Math.floor(display.workAreaSize.height * 0.8);
+  let width = Math.floor(display.workAreaSize.width * 0.7)
+  let height = Math.floor(display.workAreaSize.height * 0.8)
 
-  if (width > 1440) width = 1440;
+  if (width > 1440) width = 1440
   if (height > 900) height = 900
 
-  let image = electron.nativeImage.createFromPath(path.join(__dirname, './static/icon.png'));
+  let image = electron.nativeImage.createFromPath(path.join(__dirname, './static/icon.png'))
 
   const win = new electron.BrowserWindow({
     width,
@@ -22,28 +22,28 @@ module.exports = (onClosed) => {
     vibrancy: 'light',
     background: '#ffffff',
     titleBarStyle: 'hiddenInset',
-    frame: platform() != 'mac' ? false : true,
+    frame: platform() == 'mac',
     show: false,
     webPreferences: {
       nodeIntegration: true
     },
-    title: 'Cargo',
+    title: 'jeffe Browser',
     icon: image
-  });
+  })
 
   win.once('ready-to-show', () => {
     win.show()
-  });
+  })
 
-  win.loadURL(`file://${__dirname}/index.html`);
-  win.on('closed', onClosed);
+  win.loadURL(`file://${__dirname}/index.html`)
+  win.on('closed', onClosed)
 
   if (platform() == 'windows') {
-    win.setMenu(null);
+    win.setMenu(null)
   } else {
     const menu = electron.Menu.buildFromTemplate([
       {
-        label: 'Cargo',
+        label: 'jeffe Browser',
         submenu: [
           { role: 'quit' }
         ]
@@ -83,10 +83,10 @@ module.exports = (onClosed) => {
           {role: 'close'}
         ]
       }
-    ]);
+    ])
 
-    win.setMenu(menu);
+    win.setMenu(menu)
   }
 
-  return win;
-};
+  return win
+}

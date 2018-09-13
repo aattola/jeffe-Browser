@@ -4,6 +4,6 @@
 
 module.exports = (emitter) => {
   emitter.on('history-navigated', (history) => {
-    const time = (new Date()).getTime();
-  });
-};
+    const time = (new Date()).getTime()
+  })
+}

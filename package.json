@@ -1,15 +1,14 @@
 {
-  "name": "cargo",
-  "productName": "Cargo",
-  "version": "0.0.1",
-  "description": "A browser with a really thin ui",
+  "name": "jeffe",
+  "productName": "jeffe",
+  "version": "0.0.2",
+  "description": "jeffe selain",
   "license": "MIT",
-  "repository": "herber/cargo",
   "main": "./src/index.js",
   "author": {
-    "name": "Tobias Herber",
-    "email": "tobihrbr@gmail.com",
-    "url": "http://tobihrbr.com"
+    "name": "jeffe",
+    "email": "jeffe@gmail.com",
+    "url": "http://ei.com"
   },
   "scripts": {
     "test": "formatted",
@@ -48,8 +47,8 @@
     "formatted": "^1.0.0"
   },
   "build": {
-    "appId": "com.cargo",
-    "productName": "cargo",
+    "appId": "com.jeffe",
+    "productName": "jeffe",
     "asar": true,
     "npmRebuild": false,
     "directories": {
